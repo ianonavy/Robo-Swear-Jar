@@ -9,14 +9,17 @@
 <div id="table">
 <table id="debts">
 	<thead id="header_row">
-		<td>Name</td>
+		<tr><td>Name</td>
 		{% for type in types %}<td>{{ type.phrase }}</td>
 		{% endfor %}<td>Total</td>
-	</thead>{% for knight in knights %}<tr>
+	</tr></thead>
+	<tbody>
+	{% for knight in knights %}<tr>
 		<td class="name">{{ knight.name }}</td>
 		{% for debt in knight.all_debts %}<td class="debt"><a href="/add_swear?id={{ knight.id }}&amp;type={{ debt.type }}">{{ debt.value|currency }}</a></td>{% endfor %}
 		<td>{{ knight.total_debt|currency }}</td>
 	</tr>{% endfor %}
+	</tbody>
 </table>
 Total: {{ total|currency }}
 </div>
