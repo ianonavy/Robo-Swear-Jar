@@ -14,7 +14,7 @@ Total: {{ total }}
 		{% endfor %}<td>Total</td>
 	</tr>{% for knight in knights %}<tr>
 		<td>knight.name</td>
-		{% for debt in knight.all_debts %}<td><a href="id={{ knight.id }}&phrase={{ debt.type }}">${{ debt.value }}</a></td>
+		{% for debt in knight.all_debts %}<td><a href="id={{ knight.id }}&phrase={{ debt.type }}">${{ debt.value }}</a></td>{% endfor %}
 		<td>knight.total_debt</td>
 	</tr>{% endfor %}
 </table>
