@@ -2,6 +2,9 @@
 
 """ Utility module to hold useful methods for the swear jar application. """
 
+from django.shortcuts import render_to_response
+from django.template.context import RequestContext
+
 __author__ = "Ian Adam Naval"
 __copyright__ = "Copyright 2012 Ian Adam Naval"
 
