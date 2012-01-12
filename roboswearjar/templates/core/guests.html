@@ -5,6 +5,7 @@ Welcome to the Notre Dame RoboKnights Swear Jar!
 
 Please log in with your credentials.
 <form id="login_form" action="/login/" method="post">
+	{% csrf_token %}
 	<label>Username: <input id="username" name="username" type="text" /></label>
 	<label>Password: <input id="password" name="password" type="password" /></label>
 	<input id="submit" name="submit" type="submit" value="Log In" />
