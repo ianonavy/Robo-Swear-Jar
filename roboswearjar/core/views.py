@@ -66,5 +66,17 @@ def add_knight(request):
 
     HttpResponseRedirect('/')
 
+
 def add_swear(request):
     """ View that adds a new swear record for a team member. """
+
+    if request.method == "GET":
+        # POST is better, but GET can be used in anchor tag.
+
+        phrase = request.GET.get('phrase')
+        id_ = request.GET.get('id')
+
+        swear_type = SwearType.objects.filter(phrase=phrase)
+        speaker = Knight.objects.filter(id=id_)
+        
+    HttpResponseRedirect('/')
