@@ -1,4 +1,5 @@
 import os
+from bundle_config import config
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
