@@ -107,7 +107,7 @@ def add_type(request):
 
         new_type = SwearType()
         new_type.phrase = phrase
-        new_type.value = value
+        new_type.value = float(value)
         new_type.save()
 
     return HttpResponseRedirect('/')
@@ -116,8 +116,10 @@ def add_type(request):
 def undo(request):
     """ View that destroys the last created swear. """
 
-    latest = Swear.objects.all().latest('id')
-    if latest is not None:
+    try:
+        latest = Swear.objects.all().latest('id')
         latest.delete()
+    except:
+        pass
 
     return HttpResponseRedirect('/')
