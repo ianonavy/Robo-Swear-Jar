@@ -1,0 +1,39 @@
+#table {
+    min-width: 800px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+table#debts {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+table#debts thead {
+    font-weight: bold;
+}
+
+table#debts td {
+    max-width: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+div#config {
+    width: 480px;
+    height: 128px;
+    margin: 0 auto;
+}
+
+div#config div {
+    width: 50%;
+}
+
+div#config div#new_knight_form {
+    float: left;
+}
+
+div#config div#new_swear_form {
+    float: right;
+}
