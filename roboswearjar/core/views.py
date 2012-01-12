@@ -103,7 +103,7 @@ def add_type(request):
 
     if request.method == "POST":
         phrase = unquote_plus(request.POST.get('phrase'))
-        valuey = request.POST.get('value')
+        value = request.POST.get('value')
 
         new_type = SwearType()
         new_type.phrase = phrase
