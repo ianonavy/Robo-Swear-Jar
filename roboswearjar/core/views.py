@@ -27,13 +27,13 @@ def index(request):
         for knight in knights:
             total = total + knight.total_debt()
     
-        load_page("index.html", {
+        load_page(request, "index.html", {
             "knights": knights,
             "types": types,
             "total": total })
 
     else:
-        load_page("guests.html")
+        load_page(request, "guests.html")
 
 
 def login(request):
