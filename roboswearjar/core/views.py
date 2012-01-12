@@ -2,6 +2,9 @@
 
 """Django views for the swear jar application."""
 
+from django.contrib.auth import logout, authenticate
+from django.http import HttpResponseRedirect
+from django.contrib.auth.views import login
 from utils import load_page
 from models import Knight, SwearType
 
