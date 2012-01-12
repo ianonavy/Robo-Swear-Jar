@@ -23,7 +23,7 @@ class SwearType(models.Model):
     """ Model that encapsulates a particular swear type. Instances of these are
     meant to be created in the Django Administration page."""
 
-    phrase = models.CharFiel(max_length=255)
+    phrase = models.CharField(max_length=255)
     value = models.FloatField()
 
     def __unicode__(self):
