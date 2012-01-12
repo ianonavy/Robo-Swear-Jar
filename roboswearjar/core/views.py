@@ -18,20 +18,22 @@ __date__ = "11 January 2012"
 def index(request):
     """ View that handles displaying the home page. """
 
-    knights = Knight.objects.all()
-    types = SwearType.objects.all()
-    
-    total = 0
-    for knight in knights:
-        total = total + knight.total_debt()
-    
-    load_page("index.html", {
-        "knights": knights
-        "types": types
-        "total": total
-        })
+    if request.user.is_authenticated():
 
-    load_page("guests.html")
+        knights = Knight.objects.all()
+        types = SwearType.objects.all()
+        
+        total = 0
+        for knight in knights:
+            total = total + knight.total_debt()
+    
+        load_page("index.html", {
+            "knights": knights
+            "types": types
+            "total": total})
+
+    else:
+        load_page("guests.html")
 
 
 def login(request):
