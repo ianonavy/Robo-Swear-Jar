@@ -1,9 +1,8 @@
-from bundle_config import config
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 ADMINS = (
