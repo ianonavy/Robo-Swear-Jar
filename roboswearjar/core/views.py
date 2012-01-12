@@ -15,9 +15,32 @@ __status__ = "Development"
 __date__ = "11 January 2012"
 
 def index(request):
+    """ View that handles displaying the home page. """
+
+    load_page("index.html")
+
 
 def login(request):
+    """ View that handles logging in. """
+
+    if request.method == "POST":
+        # Get login information from the POST data.
+        username = request.POST['username']
+        password = request.POST['password']
+
+        # Authenticate the user.
+        user = authenticate(username=username, password=password)
+        
+        # Display the correct template.
+        if user is not None:
+            load_page("index.html", {"logged_in" : True})
+        else:
+            load_page("index.html", {"invalid_password" : True})
+
 
 def add_knight(request):
+    """ View that handles creating a new RoboKnights team member. """
+
 
 def add_swear(request):
+    """ View that adds a new swear record for a team member. """
