@@ -37,10 +37,15 @@ class Knight(models.Model):
     def all_debts(self):
         """ Returns an array with all the debt of the knight. """
 
+        class Debt:
+            type = ""
+            value = 0
+
         all_debts = []
         for swear_type in SwearType.objects.all():
-            debt["type"] = swear_type.phrase
-            debt["value"] = debt_for_type(self, swear_type)
+            debt = Debt()
+            debt.type = swear_type.phrase
+            debt.value = debt_for_type(self, swear_type)
             all_debts.append(debt)
         return all_debts
 
