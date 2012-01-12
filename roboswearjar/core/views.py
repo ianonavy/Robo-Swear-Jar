@@ -27,13 +27,13 @@ def index(request):
         for knight in knights:
             total = total + knight.total_debt()
     
-        load_page(request, "index.html", {
+        return load_page(request, "index.html", {
             "knights": knights,
             "types": types,
             "total": total })
 
     else:
-        load_page(request, "guests.html")
+        return load_page(request, "guests.html")
 
 
 def login(request):
@@ -51,9 +51,9 @@ def login(request):
         if user is not None:
             login(request, user)
         else:
-            HttpResponseRedirect('/?invalid=true')
+            return HttpResponseRedirect('/?invalid=true')
     
-    HttpResponseRedirect('/')
+    return HttpResponseRedirect('/')
 
 
 def add_knight(request):
@@ -64,7 +64,7 @@ def add_knight(request):
         new_member.name = request.POST["name"]
         new_member.save()
 
-    HttpResponseRedirect('/')
+    return HttpResponseRedirect('/')
 
 
 def add_swear(request):
@@ -79,4 +79,4 @@ def add_swear(request):
         swear_type = SwearType.objects.filter(phrase=phrase)
         speaker = Knight.objects.filter(id=id_)
         
-    HttpResponseRedirect('/')
+    return HttpResponseRedirect('/')
