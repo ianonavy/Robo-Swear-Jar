@@ -63,7 +63,7 @@ def logout_(request):
     """ View that handles logging out """
 
     logout(request)
-    return HttpResponseRedirect('')
+    return HttpResponseRedirect('/')
 
 
 def add_knight(request):
