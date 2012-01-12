@@ -8,7 +8,7 @@ Types: {{ types }}
 Total: {{ total }}
 
 <form id="add_knight" action="add_knight/" method="POST">
-	{% csrf token %}
+	{% csrf_token %}
 	<input id="name" name="name" type="text" />
 	<input id="submit" name="submit" type="submit" value="Add" />
 </form>
