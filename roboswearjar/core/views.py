@@ -39,7 +39,7 @@ def index(request):
         return load_page(request, "guests.html")
 
 
-def login(request):
+def login_(request):
     """ View that handles logging in. """
 
     if request.method == "POST":
