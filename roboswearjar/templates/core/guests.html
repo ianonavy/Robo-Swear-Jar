@@ -1,9 +1,13 @@
 {% extends "core/base.html" %}
 
-{% block content %}
-Welcome to the Notre Dame RoboKnights Swear Jar!
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="/static/css/guests.css" />
+{% endblock %}
 
-Please log in with your credentials.
+{% block content %}
+<p>Welcome to the Notre Dame RoboKnights Swear Jar!
+
+Please log in with your credentials.</p>
 <form id="login_form" action="/login/" method="post">
 	{% csrf_token %}
 	<label>Username: <input id="username" name="username" type="text" /></label>

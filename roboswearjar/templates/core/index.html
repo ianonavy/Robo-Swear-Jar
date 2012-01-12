@@ -1,10 +1,14 @@
 {% extends "core/base.html" %}
 {% load core_extras %}
 
-{% block content %}
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+{% endblock %}
 
-<table>
-	<thead>
+{% block content %}
+<div id="table">
+<table id="debts">
+	<thead id="header_row">
 		<td>Name</td>
 		{% for type in types %}<td>{{ type.phrase }}</td>
 		{% endfor %}<td>Total</td>
@@ -15,22 +19,20 @@
 	</tr>{% endfor %}
 </table>
 Total: {{ total|currency }}
-
+</div>
+<div id="config">
 <a href="/undo/">Undo last</a>
-
-Add a new team member:
+<p>Add a new team member:
 <form id="add_knight" action="add_knight/" method="POST">
 	{% csrf_token %}
 	<label>Name: <input id="name" name="name" type="text" /></label>
 	<input id="submit" name="submit" type="submit" value="Add" />
-</form>
-
-Add a new swear type:
+</form></p>
+<p>Add a new swear type:
 <form id="add_type" action="add_type/" method="POST">
 	{% csrf_token %}
 	<label>Phrase: <input id="phrase" name="phrase" type="text" /></label>
 	<label>Value: $<input id="value" name="value" type="text" /></label>
 	<input id="submit" name="submit" type="submit" value="Add" />
-</form>
-
+</form></p>
 {% endblock content%}

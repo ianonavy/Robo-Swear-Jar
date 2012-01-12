@@ -15,21 +15,21 @@
 
     {% block header %}
     <header id="header">
-        <div id="links">&nbsp;{% block links %}
+        <h1>RoboKnights Swear Jar</h1>
+        <div id="links">{% block links %}
         {% if user and user.is_active %}
-            <p>Logged in as {{ user.first_name }} {{ user.last_name }}</p>
-            <a href="/logout/">Log Out</a>
+            <p>Logged in as {{ user.first_name }} {{ user.last_name }}. <a href="/logout/">Log Out</a></p>
         {% endif %}{% endblock links %}
         </div>
     </header>
     {% endblock header %}
 
     {% block main %}
-    <section id="main">
+    <div id="main">
         {% block content %}
         {{ content }}
         {% endblock %}
-    </section>
+    </div>
     {% endblock main %}
 
     {% block footer %}
