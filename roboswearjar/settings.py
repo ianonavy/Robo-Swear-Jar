@@ -3,6 +3,9 @@ from bundle_config import config
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+
 ADMINS = (
     ('Ian Adam Naval', 'ianonavy@gmail.com')
 )
@@ -61,6 +64,9 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'roboswearjar.urls'
 
 TEMPLATE_DIRS = (
+    os.path.join(SITE_ROOT, 'templates'
+)
+
 )
 
 INSTALLED_APPS = (
