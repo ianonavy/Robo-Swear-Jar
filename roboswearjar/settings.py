@@ -19,7 +19,7 @@ DATABASES = {
 }
 
 MANAGERS = ADMINS
-TIME_ZONE = 'America/Los Angeles'
+TIME_ZONE = 'America/Los_Angeles'
 LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
