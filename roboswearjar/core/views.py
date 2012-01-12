@@ -88,5 +88,10 @@ def add_swear(request):
 
         swear_type = SwearType.objects.filter(id=type_)
         speaker = Knight.objects.filter(id=id_)
+
+        new_swear = Swear()
+        new_swear.swear_type = swear_type
+        new_swear.speaker = speaker
+        new_swear.save()
         
     return HttpResponseRedirect('/')
