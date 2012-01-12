@@ -23,7 +23,7 @@ table#debts td {
 div#config {
     width: 480px;
     height: 128px;
-    margin: 0 auto;
+    margin: 24px auto;
 }
 
 div#config div {

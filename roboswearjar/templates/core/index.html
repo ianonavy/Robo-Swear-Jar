@@ -23,8 +23,8 @@
 </table>
 Total: {{ total|currency }}
 </div>
+<a href="/undo/">Undo last</a>
 <div id="config">
-	<a href="/undo/">Undo last</a>
 	<div id="new_knight_form">Add a new team member:
 	<form id="add_knight" action="add_knight/" method="POST">
 		{% csrf_token %}
