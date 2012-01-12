@@ -28,9 +28,9 @@ def index(request):
             total = total + knight.total_debt()
     
         load_page("index.html", {
-            "knights": knights
-            "types": types
-            "total": total})
+            "knights": knights,
+            "types": types,
+            "total": total })
 
     else:
         load_page("guests.html")
