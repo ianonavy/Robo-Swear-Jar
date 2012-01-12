@@ -72,7 +72,7 @@ def add_knight(request):
 
     if request.method == "POST":
         new_member = Knight()
-        new_member.name = request.POST["name"]
+        new_member.name = request.POST.get('name')
         new_member.save()
 
     return HttpResponseRedirect('/')
@@ -102,8 +102,8 @@ def add_type(request):
     """ View that adds a new swewar type. """
 
     if request.method == "POST":
-        phrase = unquote_plus(request.GET.get('phrase'))
-        valuey = request.GET.get('value')
+        phrase = unquote_plus(request.POST.get('phrase'))
+        valuey = request.POST.get('value')
 
         new_type = SwearType()
         new_type.phrase = phrase
