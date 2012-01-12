@@ -23,7 +23,7 @@ def index(request):
 
     if request.user.is_authenticated():
 
-        knights = Knight.objects.all()
+        knights = Knight.objects.all().order_by('name')
         types = SwearType.objects.all()
         
         total = 0
