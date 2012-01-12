@@ -19,7 +19,7 @@ __email__ = "ianonavy@gmail.com"
 __status__ = "Development"
 __date__ = "11 January 2012"
 
-class SwearType(models.Model)
+class SwearType(models.Model):
     """ Model that encapsulates a particular swear type. Instances of these are
     meant to be created in the Django Administration page."""
 
