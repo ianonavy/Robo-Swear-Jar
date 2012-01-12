@@ -14,25 +14,26 @@
 		{% endfor %}<td>Total</td>
 	</thead>{% for knight in knights %}<tr>
 		<td class="name">{{ knight.name }}</td>
-		{% for debt in knight.all_debts %}<td class="debt"><a href="/add_swear?id={{ knight.id }}&type={{ debt.type }}">{{ debt.value|currency }}</a></td>{% endfor %}
+		{% for debt in knight.all_debts %}<td class="debt"><a href="/add_swear?id={{ knight.id }}&amp;type={{ debt.type }}">{{ debt.value|currency }}</a></td>{% endfor %}
 		<td>{{ knight.total_debt|currency }}</td>
 	</tr>{% endfor %}
 </table>
 Total: {{ total|currency }}
 </div>
 <div id="config">
-<a href="/undo/">Undo last</a>
-<p>Add a new team member:
-<form id="add_knight" action="add_knight/" method="POST">
-	{% csrf_token %}
-	<label>Name: <input id="name" name="name" type="text" /></label>
-	<input id="submit" name="submit" type="submit" value="Add" />
-</form></p>
-<p>Add a new swear type:
-<form id="add_type" action="add_type/" method="POST">
-	{% csrf_token %}
-	<label>Phrase: <input id="phrase" name="phrase" type="text" /></label>
-	<label>Value: $<input id="value" name="value" type="text" /></label>
-	<input id="submit" name="submit" type="submit" value="Add" />
-</form></p>
+	<a href="/undo/">Undo last</a>
+	<div id="new_knight_form">Add a new team member:
+	<form id="add_knight" action="add_knight/" method="POST">
+		{% csrf_token %}
+		<label>Name: <input id="name" name="name" type="text" /></label>
+		<input id="submit_knight" name="submit" type="submit" value="Add" />
+	</form></div>
+	<div id="new_swear_form">Add a new swear type:
+	<form id="add_type" action="add_type/" method="POST">
+		{% csrf_token %}
+		<label>Phrase: <input id="phrase" name="phrase" type="text" /></label>
+		<label>Value: $<input id="value" name="value" type="text" /></label>
+		<input id="submit_swear" name="submit" type="submit" value="Add" />
+	</form></div>
+</div>
 {% endblock content%}
