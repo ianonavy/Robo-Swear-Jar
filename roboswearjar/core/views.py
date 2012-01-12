@@ -59,6 +59,13 @@ def login_(request):
     return HttpResponseRedirect('/')
 
 
+def logout(request):
+    """ View that handles logging out """
+
+    logout(request)
+    return HttpResponseRedirect('')
+
+
 def add_knight(request):
     """ View that handles creating a new RoboKnights team member. """
 
