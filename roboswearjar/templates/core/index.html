@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+{% load "core_extras" %}
 
 {% block content %}
 
@@ -9,11 +10,11 @@
 		{% endfor %}<td>Total</td>
 	</thead>{% for knight in knights %}<tr>
 		<td class="name">{{ knight.name }}</td>
-		{% for debt in knight.all_debts %}<td class="debt"><a href="/add_swear?id={{ knight.id }}&type={{ debt.type }}">${{ debt.value }}</a></td>{% endfor %}
-		<td>${{ knight.total_debt }}</td>
+		{% for debt in knight.all_debts %}<td class="debt"><a href="/add_swear?id={{ knight.id }}&type={{ debt.type }}">{{ debt.value|currency }}</a></td>{% endfor %}
+		<td>{{ knight.total_debt|currency }}</td>
 	</tr>{% endfor %}
 </table>
-Total: ${{ total }}
+Total: {{ total|currency }}
 
 <form id="add_knight" action="add_knight/" method="POST">
 	{% csrf_token %}
