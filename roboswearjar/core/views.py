@@ -2,6 +2,7 @@
 
 """Django views for the swear jar application."""
 
+from urllib import unquote_plus
 from django.contrib.auth import logout, authenticate
 from django.http import HttpResponseRedirect
 from django.contrib.auth.views import login
@@ -94,4 +95,29 @@ def add_swear(request):
         new_swear.speaker = speaker
         new_swear.save()
         
+    return HttpResponseRedirect('/')
+
+
+def add_type(request):
+    """ View that adds a new swewar type. """
+
+    if request.method == "GET":
+        phrase = unquote_plus(request.GET.get('phrase'))
+        valuey = request.GET.get('value')
+
+        new_type = SwearType()
+        new_type.phrase = phrase
+        new_type.value = value
+        new_type.save()
+
+    return HttpResponseRedirect('/')
+
+
+def undo(request):
+    """ View that destroys the last created swear. """
+
+    latest = Swear.objects.all().latest()
+    if latest is not None:
+        latest.delete()
+
     return HttpResponseRedirect('/')
