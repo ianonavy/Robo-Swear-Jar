@@ -7,6 +7,18 @@ Knights: {{ knights }}
 Types: {{ types }}
 Total: {{ total }}
 
+<table>
+	<tr>
+		<td>Name</td>
+		{% for type in types %}<td>{{ type.phrase }}</td></tr>
+		{% endfor %}<td>Total</td>
+	</tr>{% for knight in knights %}<tr>
+		<td>knight.name</td>
+		{% for type in types %}<td><a href="id={{ knight.id }}&phrase={{ type.phrase }}">${{ knight.debt_for_type|type }}</a></td>
+		<td>knight.total_debt</td>
+	</tr>{% endfor %}
+</table>
+
 <form id="add_knight" action="add_knight/" method="POST">
 	{% csrf_token %}
 	<input id="name" name="name" type="text" />
