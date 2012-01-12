@@ -44,7 +44,7 @@ class Knight(models.Model):
         all_debts = []
         for swear_type in SwearType.objects.all():
             debt = Debt()
-            debt.type = swear_type.phrase
+            debt.type = swear_type.id
             debt.value = self.debt_for_type(swear_type)
             all_debts.append(debt)
         return all_debts

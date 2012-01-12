@@ -83,10 +83,10 @@ def add_swear(request):
     if request.method == "GET":
         # POST is better, but GET can be used in anchor tag.
 
-        phrase = request.GET.get('phrase')
+        type_ = request.GET.get('type')
         id_ = request.GET.get('id')
 
-        swear_type = SwearType.objects.filter(phrase=phrase)
+        swear_type = SwearType.objects.filter(id=type_)
         speaker = Knight.objects.filter(id=id_)
         
     return HttpResponseRedirect('/')
