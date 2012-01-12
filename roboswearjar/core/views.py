@@ -101,7 +101,7 @@ def add_swear(request):
 def add_type(request):
     """ View that adds a new swewar type. """
 
-    if request.method == "GET":
+    if request.method == "POST":
         phrase = unquote_plus(request.GET.get('phrase'))
         valuey = request.GET.get('value')
 
@@ -116,7 +116,7 @@ def add_type(request):
 def undo(request):
     """ View that destroys the last created swear. """
 
-    latest = Swear.objects.all().latest()
+    latest = Swear.objects.all().latest('id')
     if latest is not None:
         latest.delete()
 
