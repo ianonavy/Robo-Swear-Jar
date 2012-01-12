@@ -64,5 +64,7 @@ def add_knight(request):
         new_member.name = request.POST["name"]
         new_member.save()
 
+    HttpResponseRedirect('/')
+
 def add_swear(request):
     """ View that adds a new swear record for a team member. """
