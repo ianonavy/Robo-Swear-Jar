@@ -6,7 +6,7 @@ from django.contrib.auth import logout, authenticate
 from django.http import HttpResponseRedirect
 from django.contrib.auth.views import login
 from utils import load_page
-from models import Knight, SwearType
+from models import Knight, SwearType, Swear
 
 __author__ = "Ian Adam Naval"
 __copyright__ = "Copyright 2012 Ian Adam Naval"
