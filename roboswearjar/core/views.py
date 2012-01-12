@@ -59,7 +59,7 @@ def login_(request):
     return HttpResponseRedirect('/')
 
 
-def logout(request):
+def logout_(request):
     """ View that handles logging out """
 
     logout(request)
