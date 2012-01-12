@@ -1,4 +1,5 @@
 body {
+    background: url('/static/img/white_brick_wall.png');
     text-align: center;
     font: 12pt "Courier New", monospace;
 }
