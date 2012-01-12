@@ -9,7 +9,7 @@
 		{% endfor %}<td>Total</td>
 	</thead>{% for knight in knights %}<tr>
 		<td class="name">knight.name</td>
-		{% for debt in knight.all_debts %}<td class="debt"><a href="id={{ knight.id }}&phrase={{ debt.type }}">${{ debt.value }}</a></td>{% endfor %}
+		{% for debt in knight.all_debts %}<td class="debt"><a href="/add_swear?id={{ knight.id }}&phrase={{ debt.type }}">${{ debt.value }}</a></td>{% endfor %}
 		<td>${{ knight.total_debt }}</td>
 	</tr>{% endfor %}
 </table>
