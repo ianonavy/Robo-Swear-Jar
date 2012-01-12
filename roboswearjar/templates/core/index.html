@@ -16,9 +16,21 @@
 </table>
 Total: {{ total|currency }}
 
+<a href="/undo/">Undo last</a>
+
+Add a new team member:
 <form id="add_knight" action="add_knight/" method="POST">
 	{% csrf_token %}
-	<input id="name" name="name" type="text" />
+	<label>Name: <input id="name" name="name" type="text" /></label>
 	<input id="submit" name="submit" type="submit" value="Add" />
 </form>
+
+Add a new swear type:
+<form id="add_type" action="add_type/" method="POST">
+	{% csrf_token %}
+	<label>Phrase: <input id="phrase" name="phrase" type="text" /></label>
+	<label>Value: $<input id="value" name="value" type="text" /></label>
+	<input id="submit" name="submit" type="submit" value="Add" />
+</form>
+
 {% endblock content%}
