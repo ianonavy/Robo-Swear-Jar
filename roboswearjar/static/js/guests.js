@@ -10,26 +10,26 @@ if (drawingCanvas.getContext) {
     context.fillStyle = "#FFFF00";
     var myImage = new Image();
         myImage.onload = function() {
-        context.drawImage(myImage, 128, 128, 175, 256);
+        context.drawImage(myImage, 0, 0, 175, 256);
     }
     myImage.src = "http://roboswearjar.ep.io/static/img/jar.png";
     
     var maxYs = new Object();
-    maxYs[140] = 340;
-    maxYs[150] = 350;
-    maxYs[160] = 355;
-    maxYs[170] = 360;
-    maxYs[180] = 362;
-    maxYs[190] = 362;
-    maxYs[200] = 362;
-    maxYs[210] = 362;
-    maxYs[220] = 362;
-    maxYs[230] = 360;
-    maxYs[240] = 355;
-    maxYs[250] = 350;
-    maxYs[260] = 340;
+    maxYs[12] = 212;
+    maxYs[22] = 222;
+    maxYs[32] = 227;
+    maxYs[42] = 232;
+    maxYs[52] = 234;
+    maxYs[62] = 234;
+    maxYs[72] = 234;
+    maxYs[82] = 234;
+    maxYs[92] = 234;
+    maxYs[102] = 232;
+    maxYs[112] = 227;
+    maxYs[122] = 222;
+    maxYs[132] = 212;
     
-    var dollars = 10;
+    var dollars = 0;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange  = function() { 
         if (xhr.readyState == 4) {
@@ -49,12 +49,12 @@ function random(from, to, interval) {
 }
 
 function generateX() {
-    return random(140, 260, 10);
+    return random(10, 130, 10) + 2;
 }
 
 function generateY(x, h, maxYs) {
     y = maxYs[x];
-    if (maxYs[x] > 190) {
+    if (maxYs[x] > 62) {
         maxYs[x] -= 10;
     }
     return y;
