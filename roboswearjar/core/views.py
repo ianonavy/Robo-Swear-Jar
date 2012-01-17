@@ -125,3 +125,12 @@ def undo(request):
         pass
 
     return HttpResponseRedirect('/')
+
+def total(request):
+    """ View that returns the total dollar value of the swear jar. """
+    
+    total = 0
+    for knight in knights:
+        total = total + knight.total_debt()
+    
+    return total

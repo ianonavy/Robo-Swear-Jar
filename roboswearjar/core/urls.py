@@ -9,4 +9,5 @@ urlpatterns = patterns('core.views',
     url(r'^add_swear/$', 'add_swear'),
     url(r'^add_type/$', 'add_type'),
     url(r'^undo/$', 'undo'),
+    url(r'^total/$', 'total'),
 )
