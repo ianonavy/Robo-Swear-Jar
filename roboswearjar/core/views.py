@@ -4,7 +4,7 @@
 
 from urllib import unquote_plus
 from django.contrib.auth import logout, authenticate
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.views import login
 from utils import load_page
 from models import Knight, SwearType, Swear
@@ -126,11 +126,14 @@ def undo(request):
 
     return HttpResponseRedirect('/')
 
+
 def total(request):
     """ View that returns the total dollar value of the swear jar. """
     
-    total = 0
-    for knight in Knight.objects.all().order_by('name'):
-        total = total + knight.total_debt()
-    
-    return total
+    if request.is_ajax():
+        total = 0
+        for knight in Knight.objects.all().order_by('name'):
+            total = total + knight.total_debt()
+        return HttpResponse("" + int(total))
+    else:
+        return HttpResponse(status=404)
