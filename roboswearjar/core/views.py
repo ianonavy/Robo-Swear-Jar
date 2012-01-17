@@ -130,10 +130,7 @@ def undo(request):
 def total(request):
     """ View that returns the total dollar value of the swear jar. """
     
-    if request.is_ajax():
-        total = 0
-        for knight in Knight.objects.all().order_by('name'):
-            total = total + knight.total_debt()
-        return HttpResponse("" + int(total))
-    else:
-        return HttpResponse(status=404)
+    total = 0
+    for knight in Knight.objects.all().order_by('name'):
+        total = total + knight.total_debt()
+    return HttpResponse("" + int(total))
