@@ -130,7 +130,7 @@ def total(request):
     """ View that returns the total dollar value of the swear jar. """
     
     total = 0
-    for knight in knights:
+    for knight in Knight.objects.all().order_by('name'):
         total = total + knight.total_debt()
     
     return total
