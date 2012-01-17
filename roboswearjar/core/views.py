@@ -86,7 +86,7 @@ def add_swear(request):
 
         type_ = request.GET.get('type')
         id_ = request.GET.get('id')
-        quantity = request.GET.get('quantity', 1)
+        quantity = int(float(request.GET.get('quantity', 1)))
 
         swear_type = SwearType.objects.get(id=type_)
         speaker = Knight.objects.get(id=id_)
