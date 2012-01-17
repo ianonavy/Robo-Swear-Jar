@@ -1,27 +1,22 @@
-#table {
+#debts {
     min-width: 800px;
     max-width: 960px;
     margin: 0 auto;
 }
 
-table#debts {
-    width: 100%;
+.knight h2 {
+    font-size: 1em;
     margin: 0;
     padding: 0;
 }
 
-table#debts thead {
-    font-weight: bold;
-}
-
-table#debts td {
-    max-width: 0px;
+.knight ul {
     margin: 0;
     padding: 0;
 }
 
-tbody tr:hover {
-    background-color: rgba(0,0,0,.15)
+.knight ul li {
+    list-style: none;
 }
 
 div#config {

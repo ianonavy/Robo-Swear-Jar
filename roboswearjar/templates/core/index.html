@@ -10,10 +10,10 @@
 	{% for knight in knights %}<div class="knight">
 		<h2>{{ knight.name }}: {{ knight.total_debt|currency }}</h2>
 		<ul>
-			{% for debt in knight.all_debts %}<li>{{ debt.type.phrase }}: {{ debt.type.value }} * {{ debt.count }} = {{ debt.value }}</li>{% endfor %}
+			{% for debt in knight.all_debts %}<li>{{ debt.type.phrase }}: {{ debt.type.value|currency }} * {{ debt.count }} = {{ debt.value|currency }}</li>{% endfor %}
 		</ul>
 	</div>{% endfor %}
-Total: {{ total|currency }}
+<span id="total">Total: {{ total|currency }}</span>
 </div>
 <a href="/undo/">Undo last</a>
 <div id="config">

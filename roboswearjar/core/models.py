@@ -48,7 +48,7 @@ class Knight(models.Model):
             debt.type = swear_type
             debt.value = self.debt_for_type(swear_type)
             if debt.value != 0 and debt.type.value != 0:
-                debt.count = debt.value / debt.type.value
+                debt.count = int(debt.value / debt.type.value)
                 all_debts.append(debt)
         return all_debts
 
