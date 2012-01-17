@@ -6,21 +6,13 @@
 {% endblock %}
 
 {% block content %}
-<div id="table">
-<table id="debts">
-	<thead id="header_row">
-		<tr><td>Name</td>
-		{% for type in types %}<td>{{ type.phrase }}</td>
-		{% endfor %}<td>Total</td>
-	</tr></thead>
-	<tbody>
-	{% for knight in knights %}<tr>
-		<td class="name">{{ knight.name }}</td>
-		{% for debt in knight.all_debts %}<td class="debt"><a href="/add_swear?id={{ knight.id }}&amp;type={{ debt.type }}">{{ debt.value|currency }}</a></td>{% endfor %}
-		<td>{{ knight.total_debt|currency }}</td>
-	</tr>{% endfor %}
-	</tbody>
-</table>
+<div id="debts">
+	{% for knight in knights %}<div class="knight">
+		<h2>{{ knight.name }}: {{ knight.total_debt|currency }}</h2>
+		<ul>
+			{% for debt in knight.all_debts %}<li>{{ debt.type.phrase }}: {{ debt.type.value }} * {{ debt.count }} = {{ debt.value }}</li>{% endfor %}
+		</ul>
+	</div>{% endfor %}
 Total: {{ total|currency }}
 </div>
 <a href="/undo/">Undo last</a>
