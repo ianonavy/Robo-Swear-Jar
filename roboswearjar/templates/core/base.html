@@ -15,7 +15,7 @@
 
     {% block header %}
     <header id="header">
-        <img id="logo" src="/static/img/roboknights_logo.png" alt="RoboKnights logo">
+        <a href="/"><img id="logo" src="/static/img/roboknights_logo.png" alt="RoboKnights logo"></a>
         <h1>RoboKnights Swear Jar</h1>
         <div id="links">{% block links %}
         {% if user and user.is_active %}
