@@ -39,5 +39,9 @@ div#config div#new_knight_form {
 }
 
 div#config div#new_swear_form {
+    float: left;
+}
+
+div#config div#add_swear_form {
     float: right;
 }

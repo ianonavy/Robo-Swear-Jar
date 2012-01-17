@@ -36,8 +36,8 @@ Total: {{ total|currency }}
 		{% csrf_token %}
 		<label>Phrase: <input id="phrase" name="phrase" type="text" /></label>
 		<label>Value: $<input id="value" name="value" type="text" /></label>
-		<input id="submit_swear" name="submit" type="submit" value="Add" />
-	</form>
+		<input id="submit_new_swear" name="submit" type="submit" value="Add" />
+	</form></div>
 	<div id="add_swear_form">Add a new swear:
 	<form id="add_swear" action="add_swear" method="GET">
 		{% csrf_token %}
@@ -48,6 +48,7 @@ Total: {{ total|currency }}
 			{% for type in types %}<option value="{{ type.id }}">{{ type.phrase }}</option>{% endfor %}
 		</select></label>
 		<label>Quantity: <input id="swear_quantity" name="quantity" type="text"></label>
+		<input id="submit_swear" name="submit" type="submit" value="Add" />
 	</form></div>
 </div>
 {% endblock content%}
