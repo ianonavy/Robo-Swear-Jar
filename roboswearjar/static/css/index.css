@@ -25,13 +25,13 @@ tbody tr:hover {
 }
 
 div#config {
-    width: 480px;
+    width: 720px;
     height: 128px;
     margin: 24px auto;
 }
 
 div#config div {
-    width: 50%;
+    width: 33%;
 }
 
 div#config div#new_knight_form {
