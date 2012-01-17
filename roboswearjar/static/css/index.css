@@ -20,6 +20,10 @@ table#debts td {
     padding: 0;
 }
 
+tbody tr:hover {
+    background-color: rgba(0,0,0,.15)
+}
+
 div#config {
     width: 480px;
     height: 128px;
