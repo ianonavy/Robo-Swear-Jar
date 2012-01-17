@@ -133,4 +133,4 @@ def total(request):
     total = 0
     for knight in Knight.objects.all().order_by('name'):
         total = total + knight.total_debt()
-    return HttpResponse("" + int(total))
+    return HttpResponse(str( int(total)))
