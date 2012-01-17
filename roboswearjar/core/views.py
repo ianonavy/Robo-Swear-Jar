@@ -86,14 +86,16 @@ def add_swear(request):
 
         type_ = request.GET.get('type')
         id_ = request.GET.get('id')
+        quantity = request.GET.get('quantity', 1)
 
         swear_type = SwearType.objects.get(id=type_)
         speaker = Knight.objects.get(id=id_)
 
-        new_swear = Swear()
-        new_swear.swear_type = swear_type
-        new_swear.speaker = speaker
-        new_swear.save()
+        for i in xrange(quantity):
+            new_swear = Swear()
+            new_swear.swear_type = swear_type
+            new_swear.speaker = speaker
+            new_swear.save()
         
     return HttpResponseRedirect('/')
 
